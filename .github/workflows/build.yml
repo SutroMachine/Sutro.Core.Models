@@ -1,0 +1,16 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - '*'
+    tags-ignore:
+      - 1.*
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build solution
+        run: dotnet build -c Release

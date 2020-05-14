@@ -1,0 +1,19 @@
+name: Build & Publish NuGet Package
+
+on:
+  push:
+    tags:
+      - 1.*
+
+jobs:
+  publish:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build solution
+        run: dotnet build -c Release
+        run: dotnet pack Sutro.Core.Models/Sutro.Core.Models.csproj -c Release --include-source --include-symbols
+      - name: Push package
+        run: dotnet nuget push **/*.nupkg 
+               --api-key ${{ secrets.NUGET_API_KEY }}
+               --source https://api.nuget.org/v3/index.json
