@@ -4600,7 +4600,7 @@ select new {
 //</HowToFix>]]></Query>
     </Group>
     <Group Name="API Breaking Changes" Active="True" ShownInReport="True">
-      <Query Active="True" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="True"><![CDATA[// <Name>API Breaking Changes: Types</Name>
+      <Query Active="False" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="True"><![CDATA[// <Name>API Breaking Changes: Types</Name>
 // <Id>ND1500:APIBreakingChangesTypes</Id>
 
 warnif count > 0 from t in codeBase.OlderVersion().Application.Types
@@ -4724,7 +4724,7 @@ select new {
 // friction with consumers of the API.
 //</HowToFix>
 ]]></Query>
-      <Query Active="True" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="True"><![CDATA[// <Name>API Breaking Changes: Fields</Name>
+      <Query Active="False" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="True"><![CDATA[// <Name>API Breaking Changes: Fields</Name>
 // <Id>ND1502:APIBreakingChangesFields</Id>
 
 warnif count > 0 from f in codeBase.OlderVersion().Application.Fields

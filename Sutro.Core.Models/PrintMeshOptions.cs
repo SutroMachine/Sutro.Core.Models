@@ -20,18 +20,17 @@
         /// </summary>
         public bool IsCropRegion { get; set; } = false;
 
-
         /// <summary>
         /// Treat the mesh as an open mesh (i.e. deposit material along part boundary and do not fill)
         /// </summary>
-        public bool IsOpen { get; set; } = false;         
+        public bool IsOpen { get; set; } = false;
 
         public double ClearanceXY { get; set; } = 0;
         public double OffsetXY { get; set; } = 0;
 
-        public OpenPathsModes OpenPathMode;
+        public OpenPathsModes OpenPathMode { get; set; }
 
-        public object Extended = null;
+        public object Extended { get; set; } = null;
 
         public PrintMeshOptions DeepCopy()
         {

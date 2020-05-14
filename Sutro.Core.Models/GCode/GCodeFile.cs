@@ -4,7 +4,7 @@ namespace Sutro.Core.Models.GCode
 {
     public class GCodeFile
     {
-        List<GCodeLine> lines;
+        private readonly List<GCodeLine> lines;
 
         public GCodeLine this[int i]
         {
@@ -19,28 +19,31 @@ namespace Sutro.Core.Models.GCode
             lines = new List<GCodeLine>();
         }
 
-        public void AppendLine(GCodeLine l)
+        public void AppendLine(GCodeLine line)
         {
-            lines.Add(l);
+            lines.Add(line);
         }
-        
-        public int LineCount {
+
+        public int LineCount
+        {
             get { return lines.Count; }
         }
 
         public IEnumerable<GCodeLine> AllLines()
         {
             int N = lines.Count;
-            for (int i = 0; i < N; ++i) {
+            for (int i = 0; i < N; ++i)
+            {
                 yield return lines[i];
             }
         }
 
-        public IEnumerable<GCodeLine> AllLinesOfType(GCodeLine.LType eType)
+        public IEnumerable<GCodeLine> AllLinesOfType(LineType eType)
         {
             int N = lines.Count;
-            for (int i = 0; i < N; ++i) {
-                if ( lines[i].type == eType )
+            for (int i = 0; i < N; ++i)
+            {
+                if (lines[i].Type == eType)
                     yield return lines[i];
             }
         }

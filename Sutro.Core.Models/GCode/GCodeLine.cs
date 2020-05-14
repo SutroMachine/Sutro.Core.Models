@@ -1,68 +1,66 @@
 ﻿namespace Sutro.Core.Models.GCode
 {
-	// ugh..class...dangerous!!
-	public class GCodeLine
-	{
-		public enum LType
-		{
-			GCode,
-			MCode, 
-			UnknownCode,
+    // ugh..class...dangerous!!
+    public class GCodeLine
+    {
+        public int LineNumber { get; set; }
 
-			Comment,
-			UnknownString,
-			Blank,
+        public LineType Type { get; set; }
 
-			If,
-			EndIf,
-			Else,
-			UnknownControl
-		}
+        public string OriginalString { get; set; }
 
-		public int lineNumber;
+        // N number of line
+        public int N;
 
-		public LType type;
-		public string orig_string;
+        // G or M code
+        public int Code { get; set; }
 
-		public int N;       // N number of line
-		public int code;    // G or M code
-		public GCodeParam[] parameters;      // arguments/parameters
+        // arguments/parameters
+        public GCodeParam[] Parameters { get; set; }
 
-		public string comment;
+        public string Comment { get; set; }
 
-		public GCodeLine(int num, LType type)
-		{
-			lineNumber = num;
-			this.type = type;
+        public GCodeLine(int lineNumber, LineType type)
+        {
+            LineNumber = lineNumber;
+            Type = type;
 
-			orig_string = null;
-			N = code = -1;
-			parameters = null;
-			comment = null;
-		}
+            OriginalString = null;
+            N = Code = -1;
+            Parameters = null;
+            Comment = null;
+        }
 
-		public GCodeLine(int lineNum, LType type, string comment) {
-			lineNumber = lineNum;
-			this.type = type;			
-			if ( type == LType.UnknownString ) {
-				this.orig_string = comment;
-			} else {
-				this.comment = comment;
-			}
-		}
+        public GCodeLine(int lineNumber, LineType type, string comment)
+        {
+            LineNumber = lineNumber;
+            Type = type;
+            if (type == LineType.UnknownString)
+            {
+                OriginalString = comment;
+            }
+            else
+            {
+                Comment = comment;
+            }
+        }
 
-		public virtual GCodeLine Clone() {
-			GCodeLine clone = new GCodeLine(this.lineNumber, this.type);
-			clone.orig_string = this.orig_string;
-			clone.N = this.N;
-			clone.code = this.code;
-			if ( this.parameters != null ) {
-				clone.parameters = new GCodeParam[this.parameters.Length];
-				for (int i = 0; i < this.parameters.Length; ++i )
-					clone.parameters[i] = this.parameters[i];
-			}
-			clone.comment = this.comment;
-			return clone;
-		}
-	}
+        public virtual GCodeLine Clone()
+        {
+            GCodeLine clone = new GCodeLine(LineNumber, Type);
+            clone.OriginalString = OriginalString;
+            clone.N = N;
+            clone.Code = Code;
+            if (Parameters != null)
+            {
+                clone.Parameters = new GCodeParam[Parameters.Length];
+                for (int i = 0; i < Parameters.Length; ++i)
+                {
+                    clone.Parameters[i] = Parameters[i];
+                }
+            }
+            clone.Comment = Comment;
+            return clone;
+        }
+    }
 }
