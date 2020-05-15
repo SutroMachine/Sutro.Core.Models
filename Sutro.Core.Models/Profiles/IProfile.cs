@@ -6,5 +6,6 @@ namespace Sutro.Core.Models.Profiles
 {
     public interface IProfile : IMachineProfile, IMaterialProfile, IPartProfile
     {
+        IProfile Clone();
     }
 }

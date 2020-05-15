@@ -11,7 +11,5 @@
 
         MachineBedOriginLocationX OriginX { get; set; }
         MachineBedOriginLocationY OriginY { get; set; }
-
-        IMachineProfile Clone();
     }
 }
