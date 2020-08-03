@@ -11,7 +11,11 @@
 
 These are seperated as a stand-alone package to facilitate communication between Sutro.Core and other applications while minimizing versioning issues.</Description>
     <PackageProjectUrl>https://github.com/SutroMachine/Sutro.Core.Models</PackageProjectUrl>
-    <Version>1.0.5</Version>
+    <Version>1.0.6</Version>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Sutro.Core.Models.Key.pfx</AssemblyOriginatorKeyFile>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <DelaySign>false</DelaySign>
   </PropertyGroup>
 
   <ItemGroup>

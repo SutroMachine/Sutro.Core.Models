@@ -13,4 +13,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build solution
-        run: dotnet build -c Release
+        run: dotnet pack -c Release
