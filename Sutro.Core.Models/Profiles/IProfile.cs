@@ -6,6 +6,8 @@ namespace Sutro.Core.Models.Profiles
 {
     public interface IProfile
     {
+        int SchemaVersion { get; }
+
         string Name { get; }
 
         IProfile Clone();
