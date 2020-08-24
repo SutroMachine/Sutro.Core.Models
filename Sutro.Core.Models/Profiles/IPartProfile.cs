@@ -1,7 +1,6 @@
-﻿namespace Sutro.Core.Models
+﻿namespace Sutro.Core.Models.Profiles
 {
-    public interface IPartProfile
+    public interface IPartProfile : IProfile
     {
-        string ProfileName { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Sutro.Core.Models
+﻿namespace Sutro.Core.Models.Profiles
 {
     public enum MachineBedOriginLocationX
     {

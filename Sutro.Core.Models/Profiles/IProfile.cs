@@ -4,8 +4,10 @@ using System.Text;
 
 namespace Sutro.Core.Models.Profiles
 {
-    public interface IProfile : IMachineProfile, IMaterialProfile, IPartProfile
+    public interface IProfile
     {
+        string Name { get; }
+
         IProfile Clone();
     }
 }

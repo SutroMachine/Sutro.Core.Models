@@ -1,6 +1,6 @@
-﻿namespace Sutro.Core.Models
+﻿namespace Sutro.Core.Models.Profiles
 {
-    public interface IMachineProfile
+    public interface IMachineProfile : IProfile
     {
         string ManufacturerName { get; set; }
         string ModelIdentifier { get; set; }
