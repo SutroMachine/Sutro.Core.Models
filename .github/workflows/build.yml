@@ -1,9 +1,6 @@
 name: Build & Publish NuGet Package
 
-on:
-  push:
-    branches:
-      - '*'
+on: [push]
 
 jobs:
   publish:
