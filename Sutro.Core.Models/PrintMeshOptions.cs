@@ -7,10 +7,6 @@ namespace Sutro.Core.Models
     /// </summary>
     public class PrintMeshOptions
     {
-        public IMaterialProfile MaterialProfile { get; set; }
-
-        public IPartProfile PartProfile { get; set; }
-
         /// <summary>
         /// Treat the mesh as volume that should contain supports
         /// </summary>
