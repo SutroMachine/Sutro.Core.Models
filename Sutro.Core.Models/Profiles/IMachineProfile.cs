@@ -2,7 +2,7 @@
 
 namespace Sutro.Core.Models.Profiles
 {
-    public interface IMachineProfile<TSettings> : IProfile<TSettings>
+    public interface IMachineProfile : IProfile
     {
         string ManufacturerName { get; set; }
         string ModelIdentifier { get; set; }
@@ -11,9 +11,9 @@ namespace Sutro.Core.Models.Profiles
         double BedSizeYMM { get; set; }
 
         [Obsolete("Use MaxHeightMM instead")]
-        double BedSizeZMM { get => MaxHeightMM; set => MaxHeightMM = value; }
+        double BedSizeZMM { get; set; } 
 
-        double MaxHeightMM { get; set; }
+        double MaxHeightMM { get => BedSizeZMM; set => BedSizeZMM = value; }
 
         MachineBedOriginLocationX OriginX { get; set; }
         MachineBedOriginLocationY OriginY { get; set; }

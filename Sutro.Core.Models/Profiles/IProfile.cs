@@ -1,15 +1,15 @@
-﻿namespace Sutro.Core.Models.Profiles
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Sutro.Core.Models.Profiles
 {
-    public interface IProfile<TSettings>
+    public interface IProfile
     {
         int SchemaVersion { get; }
 
         string Name { get; }
 
-        IProfile<TSettings> Clone();
-
-        void ApplyToSettings(TSettings settings);
-
-        void LoadFromSettings(TSettings settings);
+        IProfile Clone();
     }
 }
