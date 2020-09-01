@@ -6,10 +6,10 @@ namespace Sutro.Core.Models.Profiles
 {
     public interface IPrintProfile
     {
-        public IMachineProfile Machine { get; }
+        public IMachineProfile MachineProfile { get; }
 
-        public IMaterialProfile Material { get; }
+        public IMaterialProfile MaterialProfile { get; }
 
-        public IPartProfile Part { get; }
+        public IPartProfile PartProfile { get; }
     }
 }

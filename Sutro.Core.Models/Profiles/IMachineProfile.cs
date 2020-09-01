@@ -11,9 +11,9 @@ namespace Sutro.Core.Models.Profiles
         double BedSizeYMM { get; set; }
 
         [Obsolete("Use MaxHeightMM instead")]
-        double BedSizeZMM { get; set; } 
+        double BedSizeZMM { get => MaxHeightMM; set => MaxHeightMM = value; } 
 
-        double MaxHeightMM { get => BedSizeZMM; set => BedSizeZMM = value; }
+        double MaxHeightMM { get; set; }
 
         MachineBedOriginLocationX OriginX { get; set; }
         MachineBedOriginLocationY OriginY { get; set; }
