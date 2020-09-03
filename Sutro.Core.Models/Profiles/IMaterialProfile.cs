@@ -1,6 +1,6 @@
-﻿namespace Sutro.Core.Models
+﻿namespace Sutro.Core.Models.Profiles
 {
-    public interface IMaterialProfile
+    public interface IMaterialProfile : IProfile
     {
         string MaterialName { get; set; }
     }
